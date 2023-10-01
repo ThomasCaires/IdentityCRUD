@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using IdentityCRUD.Context;
 using IdentityCRUD.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IdentityCRUD.Controllers
 {
+    [Authorize(Roles="Admin")]
     public class AlunoesController : Controller
     {
         private readonly AppDbContext _context;
